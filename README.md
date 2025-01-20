@@ -3,11 +3,14 @@
 
 Установить образ Linux
 
+![image](https://github.com/user-attachments/assets/b75f1e46-b7d8-47dc-bf7d-49d867dde538)
 
 
 Выделить 4 ядра
 
 Выделить 4096 МБ оперативной памяти
+
+![image](https://github.com/user-attachments/assets/fde546eb-76ce-41ac-8ed2-ec3d954e4a48)
 
 
 # Установка docker
@@ -16,22 +19,27 @@
 
      sudo yum install wget
 
+![image](https://github.com/user-attachments/assets/05024b7a-ef82-4193-a916-5c098613ae11)
 
 
 Скачиваем файл репозитория
 
      sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo
 
+![image](https://github.com/user-attachments/assets/37d52cf8-1d79-445c-9fcc-78c2a442d32e)
 
 Устанавливаем docker
 
      sudo yum install docker-ce docker-ce-cli containerd.io
+     
+![image](https://github.com/user-attachments/assets/232a4eba-5bbb-468d-81b9-650252c64f59)
 
 
 Запускаем его и разрешаем автозапуск
 
      sudo systemctl enable docker --now
 
+![image](https://github.com/user-attachments/assets/d61997df-9e15-4703-86c5-59f60a7325ff)
 
 
 # Установка compose
@@ -40,6 +48,7 @@
 
      sudo yum install curl
 
+![image](https://github.com/user-attachments/assets/0f8d9396-dfa6-4d0f-a848-dbef5d3bb16d)
 
 
 
@@ -52,6 +61,7 @@
 
      sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
 
+![image](https://github.com/user-attachments/assets/eb01d532-4948-42aa-9c8b-3ca772049bd9)
 
 
 
@@ -63,6 +73,7 @@
 
      sudo docker-compose --version
 
+![image](https://github.com/user-attachments/assets/cb31e25a-447d-411b-9d5d-23f5830f2512)
 
 
 # Делаем grafana
@@ -71,6 +82,7 @@
 
      sudo yum install git
 
+![image](https://github.com/user-attachments/assets/4d201493-0e0d-4513-8fb3-08dc93d53ff8)
 
 
 
@@ -86,6 +98,7 @@
 
 cd .. - возвращает в папку выше
 
+![image](https://github.com/user-attachments/assets/af9bdae9-45b4-42fa-898c-7aa62558e3dc)
 
 (После этого можно вставлять готовый docker-compose)
 
@@ -111,11 +124,14 @@ Cоздаем папки двумя разными способами
 
      sudo mv grafana.yaml docker-compose.yaml
 
+![image](https://github.com/user-attachments/assets/9821a39a-1064-4220-bf31-7bf0f02df5e8)
 
 
 Собрать докер (нужно запускать из папки где docker-compose.yaml)
 
      sudo docker compose up -d
+     
+![image](https://github.com/user-attachments/assets/56a95968-942b-4421-b67f-c2af12dccb08)
 
 Опустить докер - sudo docker compose stop
 
@@ -133,6 +149,7 @@ Cоздаем папки двумя разными способами
 
 Затем в docker-compose нужно вставить node-exporter и удалить ненужные файлы (но у нас уже вставлен готовый докер)
 
+![image](https://github.com/user-attachments/assets/771ba1c1-9b5f-47b1-b6dd-d86911dd41fd)
 
 выйти не сохраняясь из vim - esc -> :q!
 
@@ -146,11 +163,13 @@ Cоздаем папки двумя разными способами
 
      sudo vi prometheus.yaml
 
+![image](https://github.com/user-attachments/assets/172d29ef-ab0e-4ae7-8cff-bb8ebcfd7d46)
 
 
 
 Далее нужно исправить targets: на exporter:9100
 
+![image](https://github.com/user-attachments/assets/67113037-c873-4c8d-90a6-922f14350ecd)
 
 
 # Делаем grafana на сайте
@@ -199,6 +218,8 @@ Cоздаем папки двумя разными способами
 
 
 
+
+
 # Делаем VictoriaMetrics
 
 Для начала зайдем в нужную папку
@@ -211,6 +232,7 @@ Cоздаем папки двумя разными способами
 
 После prometheus вставляем vmagent (но у нас уже вставлен готовый докер)
 
+![image](https://github.com/user-attachments/assets/715909e4-f85b-4665-afb6-6a4f7d202db7)
 
 
 
